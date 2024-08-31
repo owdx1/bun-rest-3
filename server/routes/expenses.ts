@@ -46,6 +46,10 @@ get("/", c => {
 
 })
 
+.get("/total-expense", c => {
+  return c.json({ total : 299 })
+})
+
 .post("/", zValidator("json", createExpenseSchema), c => { 
   const expense = c.req.valid("json")
   fakeExpenses.push({
